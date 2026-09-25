@@ -1,0 +1,52 @@
+
+positional only arguments python - > Before the /  Positional-only
+keyword only arguments python - > After the *Keyword-only
+
+Between / and * -> Position OR Keyword
+
+def mixed_example(pos_only, /, standard, *, kw_only):
+    print(pos_only, standard, kw_only)
+
+pos_only - > positional only arguments
+standard -> Position OR Keyword
+kw_only -> keyword only arguments
+
+
+Yes, Python allows a function to return more than one value. Python automatically groups multiple returned values into a tuple.
+
+def calculate(a, b):
+    return a + b, a - b, a * b
+
+#unpacking of retunr value 
+addition, subtraction, multiplication = calculate(10, 5)
+
+print(addition)
+print(subtraction)
+print(multiplication)
+
+
+function annotation 
+annotation - > giving extra tip or note on the datatype of the parameter or the retunr type 
+
+
+nonlocal ?
+
+higher-order function?
+
+clouser and decorator 
+
+typehint 
+
+comphrenesion : pythonic approach 
+
+dictornary comphrenesion and set 
+
+enumurate 
+
+zip() functionality 
+
+sorted()
+
+any() all()
+
+https://github.com/Thangam-Arulseeli/PythonBasics.git
