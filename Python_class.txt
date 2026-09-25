@@ -1,4 +1,6 @@
 
+Day 2 :
+
 positional only arguments python - > Before the /  Positional-only
 keyword only arguments python - > After the *Keyword-only
 
@@ -50,3 +52,102 @@ sorted()
 any() all()
 
 https://github.com/Thangam-Arulseeli/PythonBasics.git
+
+Day 3 :
+
+read mode - > r 
+write/overwrite mode -> w
+append -> a
+create -> x 
+read and write -> r+
+read binary -> rb 
+write binary -> wb 
+
+diff of read (read all data )/ 
+        readline(one line) / 
+        readlines(all lines as list values )
+
+io process 
+
+ context manager-> with 
+    if the exception or error comes it get close the file 
+    if the with block get over the resource used in the block is been realised
+
+    can unpack a list in python (important doubt !!!!!!!)
+
+json data handeling - > import json 
+
+    TO ADD DATA WE USE  -> json.dump(variable , file , indent = 4 (alignment))
+
+    TO READ FIRST ADD INTO A VARIABLE -> json.load(file)
+
+csv data handeling - > import csv
+
+    READ DATA -> csv.DictReader(file)
+
+    WRITE -> csv.write() , we have writerow / writerows 
+
+    pathlib build in module -> used to work with files and folders 
+
+error handling :
+    try :
+        code to run 
+    except exceptiontype1:
+        block
+    except exceptiontype2:
+        block
+    else:
+        no exception occurs
+    finally :
+        execute always 
+
+#MULTIPLE EXCEPTION 
+
+    except (exceptiontype1,exceptiontype2):
+        block
+
+
+#GENERIC EXCEPTION 
+
+    except keyword in case do no keyword use Exception like 
+
+    except Exception as e : and use it 
+
+Raise an exception  -> use raise keyword   
+
+    Custom Exception (check it out !!!!!!!)
+
+    json.JSONDecoderError 
+
+
+ENV FILE 
+    .env file -> secret information and configuration settings separate from the main source code
+
+    git ignore file 
+
+    pip install python-dotenv 
+
+    from dotenv import load_dotenv
+    import os 
+
+    load_dotenv()
+
+    os.getevn("key or varibel ")
+
+
+
+topics : 
+    file modes 
+    file handeling 
+    context manager
+    json file handeling
+    csv file handeling
+    pathlib -> path
+    error handeling 
+    modules -> user defined modules 
+    environment variable 
+
+
+food items  try catch context manager path env module 
+sam -> students 
+
