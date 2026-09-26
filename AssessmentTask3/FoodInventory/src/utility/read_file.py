@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-def read_file(path_received):
+def read_file(path_received : Path) -> list[dict[str, str]]:
 
     path = Path(path_received)
 

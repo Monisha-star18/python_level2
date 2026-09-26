@@ -2,6 +2,7 @@ from src.utility.display import display_foods , display_inventory
 from src.utility.overwrite_inventory import overwrite_inventory
 from src.utility.search import search_foodItem
 from src.utility.update_quantity import update_quantity
+from src.utility.max_item import maximum_quantity
 
 def display_menu():
         
@@ -12,7 +13,8 @@ def display_menu():
     print("3. Overwrite Inventory")
     print("4. Update Quantity")
     print("5. Search Food")
-    print("6. Exit")
+    print("6. Find Food with maximum quantity")
+    print("7. Exit")
     print("----------------------------------------")
 
 def main():
@@ -24,7 +26,7 @@ def main():
         display_menu()
 
         try:
-            choice = int(input("Enter Your choice of opertaion (1-6) : "))
+            choice = int(input("Enter Your choice of opertaion (1-7) : "))
 
             match choice :
                 case 1 :
@@ -45,7 +47,10 @@ def main():
                     searched_food = input("Enter the food to search : ").lower()
                     search_foodItem(searched_food)
 
-                case 6 :
+                case 6:
+                    maximum_quantity()
+
+                case 7 :
                     print("Thankyou For Your Visti")
                     is_running = False
                     
@@ -55,8 +60,6 @@ def main():
         except Exception as e  :
             print("----------------------------------------")
             print("Cannot continue due to :  ",e)
-
-
 
 
 if __name__ =='__main__':

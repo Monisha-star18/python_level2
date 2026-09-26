@@ -3,7 +3,7 @@ from .read_file import read_file
 
 
 #display the main Food 
-def display_foods ():
+def display_foods () -> None:
     try:
         reader = read_file(get_foodPath())
         
@@ -21,7 +21,7 @@ def display_foods ():
         print("The error in the display foods " , e)
 
 #display the Inventory 
-def display_inventory():
+def display_inventory()->None:
 
     try:
         reader = read_file(get_inventoryPath())

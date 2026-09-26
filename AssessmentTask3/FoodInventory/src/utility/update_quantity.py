@@ -3,7 +3,7 @@ from ..config import get_inventoryPath
 from .read_file import read_file
 
 
-def update_quantity(food_id):
+def update_quantity(food_id:int ) ->None:
 
     food_quantites = read_file(get_inventoryPath())
 

@@ -1,7 +1,7 @@
 from ..config import get_foodPath
 from .read_file import read_file
 
-def search_foodItem (searched_food):
+def search_foodItem (searched_food : str)-> None:
 
     food_items = read_file(get_foodPath())
 

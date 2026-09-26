@@ -4,7 +4,7 @@ from .read_file import read_file
 
 inventory_fieldnames = ["food_id","quantity"]
 
-def overwrite_inventory():
+def overwrite_inventory()->None:
 
     food_items = read_file(get_foodPath())
 
