@@ -424,10 +424,6 @@ Abstract Class
 
 
 
-
-from abc import ABC, abstractmethod
-
-
 class PaymentProcessor(ABC):
 
     @abstractmethod
@@ -465,6 +461,20 @@ Output:
 
 Processing Card payment: ₹5000
 Processing UPI payment: ₹5000
+
+ABC defines what method must exist, while each child class defines how that method behaves.
+
+CardPayment object
+       ↓
+process() → Card payment
+
+UPIPayment object
+       ↓
+process() → UPI payment
+
+from abc import ABC, abstractmethod
+
+That's polymorphism — one interface/method name, multiple implementations.
 
 
 PaymentProcessor defines the contract:

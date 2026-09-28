@@ -334,7 +334,7 @@ user = User(
 
 print(user.username)
 
-# print(user.__password)
+print(user.__password)
 
 '''
 The above direct access produces:
@@ -350,6 +350,8 @@ because __password uses name mangling.
 # ============================================================
 
 '''
+Name mangling is Python's way of making a private attribute/method harder to access directly from outside a class.
+
 When Python sees:
 
     __password
@@ -427,6 +429,8 @@ A traditional way of implementing encapsulation is:
     getter method
             +
     setter method
+
+get_ and set_ are not Python keywords. They are naming conventions commonly used for getter and setter methods
 '''
 
 
