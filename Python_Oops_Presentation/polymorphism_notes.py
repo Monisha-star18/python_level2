@@ -89,6 +89,8 @@ This is polymorphism.
 Duck Typing is one of the most important forms
 of polymorphism in Python.
 
+Duck typing can be considered a form of runtime polymorphism in Python
+
 Python focuses on:
 
     "What an object can do"
@@ -549,14 +551,14 @@ Protocol focuses on the required behavior.
 
 A class does not have to inherit from the Protocol.
 
-
+'''
 from typing import Protocol
 
 
 class PaymentGateway(Protocol):
 
     def process(self, amount: float) -> bool:
-        ...
+        ... # or use pass
 
 
 class RazorpayGateway:
@@ -577,26 +579,34 @@ class StripeGateway:
         return True
 
 
-def make_payment(
-    gateway: PaymentGateway,
-    amount: float
-):
-
+def make_payment( gateway: PaymentGateway, amount: float ):
     return gateway.process(amount)
 
 
-make_payment(
-    RazorpayGateway(),
-    5000
-)
+make_payment( RazorpayGateway(), 5000 )
 
-make_payment(
-    StripeGateway(),
-    3000
-)
+make_payment(  StripeGateway(),  3000 )
+
 
 '''
-'''
+Without Protocol, you can absolutely use duck typing:
+class Razorpay:
+    def process(self, amount):
+        print("Razorpay payment")
+
+
+class Stripe:
+    def process(self, amount):
+        print("Stripe payment")
+
+
+def make_payment(gateway, amount):
+    gateway.process(amount)
+
+
+Because Protocol gives us a clear contract for type checking and documentation
+
+
 The classes do not inherit from PaymentGateway.
 
 They simply provide:
@@ -613,3 +623,49 @@ Protocol is especially useful with:
     Testing
 '''
 
+'''
+POLYMORPHISM
+============
+
+1. Meaning
+   → Many forms
+
+2. Main idea
+   → Same interface, different behavior
+
+3. Function polymorphism
+   → len() works with string, list, tuple, etc.
+
+4. Duck typing
+   → Behavior matters more than class/type.
+
+5. Method overriding
+   → Child provides its own implementation
+     of a parent method.
+
+6. Method overloading
+   → Python does not support traditional
+     compile-time method overloading.
+
+7. Overloading-like behavior
+   → Default arguments
+   → *args
+   → **kwargs
+
+8. Operator overloading
+   → Special methods such as:
+       __add__()
+       __eq__()
+       __gt__()
+
+9. ABC
+   → Defines a contract for child classes.
+
+10. Protocol
+    → Defines required structure/behavior
+      without requiring inheritance.
+
+11. Runtime polymorphism
+    → Different objects can respond to
+      the same method call differently.
+'''
