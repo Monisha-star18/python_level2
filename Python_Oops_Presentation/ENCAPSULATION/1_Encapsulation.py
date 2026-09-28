@@ -49,10 +49,6 @@ account.balance = -50000
 
 print(account.balance)
 
-# Output:
-# -50000
-
-
 '''
 Problem:
 
@@ -84,19 +80,19 @@ we control access through methods.
 
 class BankAccount:
 
-    def __init__(self, balance):
+    def __init__(self, balance:float):
         self._balance = balance
 
-    def deposit(self, amount):
+    def deposit(self, amount:float):
 
         if amount <= 0:
             raise ValueError(
                 "Deposit amount must be greater than zero"
             )
 
-        self._balance += amount
+        self._balance:float += amount
 
-    def withdraw(self, amount):
+    def withdraw(self, amount:float):
 
         if amount <= 0:
             raise ValueError(
@@ -121,9 +117,6 @@ account.deposit(5000)
 account.withdraw(2000)
 
 print(account.get_balance())
-
-# Output:
-# 13000
 
 
 '''

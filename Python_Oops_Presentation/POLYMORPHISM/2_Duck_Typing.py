@@ -30,9 +30,9 @@ class EmailNotification:
 
 
 class SMSNotification:
-
-    def send(self, message):
-        print(f"SMS sent: {message}")
+    pass
+    #def send(self, message):
+       # print(f"SMS sent: {message}")
 
 
 def send_notification(notification, message):

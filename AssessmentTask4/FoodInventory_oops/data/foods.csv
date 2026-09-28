@@ -1,0 +1,11 @@
+food_id,food_name,category,price,cost_price,stock_quantity,tax_percent,discount_percent,rating
+101,Burger,Fast Food,120.0,75.0,20,5.0,10.0,4.5
+102,Pizza,Fast Food,250.0,150.0,30,5.0,15.0,4.7
+103,Biryani,Main Course,180.0,110.0,40,5.0,5.0,4.6
+104,Fried Rice,Main Course,150.0,90.0,35,5.0,10.0,4.3
+105,Ice Cream,Dessert,80.0,40.0,60,12.0,5.0,4.4
+106,Sandwich,Fast Food,100.0,55.0,45,5.0,10.0,4.1
+107,Pasta,Main Course,200.0,120.0,25,5.0,8.0,4.5
+108,Cake,Dessert,300.0,180.0,20,18.0,10.0,4.8
+109,French Fries,Fast Food,90.0,45.0,55,5.0,5.0,4.2
+110,Chicken Rice,Main Course,170.0,100.0,30,5.0,8.0,4.6

@@ -22,7 +22,7 @@ If we define the same method twice,
 the second definition replaces the first.
 '''
 
-
+'''
 class Calculator:
 
     def add(self, a):
@@ -35,10 +35,10 @@ class Calculator:
 
 object1 = Calculator()
 
-result = object1.add(10)
+result = object1.add(10,10)
 
 print(result)
-
+'''
 '''
 The first add() is replaced by the second add().
 
@@ -61,7 +61,7 @@ Python can achieve overloading-like behavior using:
     - **kwargs
 
 
-
+'''
 class Calculator:
 
     def add(self, a, b=0):
@@ -96,7 +96,6 @@ print(calculator.add(10, 20, 30))
 #30
 #60
 
-'''
 '''
 One method supports different numbers
 of arguments.

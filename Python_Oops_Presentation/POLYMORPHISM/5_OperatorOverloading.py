@@ -24,13 +24,13 @@ class Employee:
         self.salary = salary
 
     def __gt__(self, other):
-        return self.salary > other.salary
+            return self.salary > other.salary
 
 
 employee1 = Employee("Arun", 50000)
 employee2 = Employee("Priya", 40000)
 
-print(employee2 > employee1)
+print(employee1 > employee2)
 
 # Output:
 # False
@@ -87,3 +87,6 @@ repr()            __repr__()
 '''
 
 
+# + addition  = equal 
+
+#a + b -> _add__ -> def 

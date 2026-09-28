@@ -1,0 +1,10 @@
+order_id,customer_name,food_id,quantity,order_date,status,payment_method
+5001,Arun,101,2,2026-09-28,Completed,UPI
+5002,Priya,102,1,2026-09-28,Completed,Card
+5003,Karthik,103,3,2026-09-28,Pending,Cash
+5004,Divya,105,2,2026-09-28,Completed,UPI
+5005,Rahul,108,1,2026-09-28,Cancelled,Card
+5006,Meena,101,4,2026-09-28,Completed,UPI
+5007,Suresh,107,2,2026-09-28,Pending,Cash
+33939,Ravi,110,3,2026-09-28,Pending,Cash
+11,Moni,101,30,2026-09-28,Pending,Cash
