@@ -40,7 +40,7 @@ def main():
 
                 case 4:
                     food_id = int(input("Enter the Food id to be updated :"))
-                    
+                       
                     update_quantity(food_id)
 
                 case 5:
