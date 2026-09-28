@@ -33,8 +33,11 @@ class Calculator:
 
         return a + b
 
+object1 = Calculator()
 
+result = object1.add(10)
 
+print(result)
 
 '''
 The first add() is replaced by the second add().
