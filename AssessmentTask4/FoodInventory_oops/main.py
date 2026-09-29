@@ -8,6 +8,8 @@ from src.services.food_service import FoodService
 from src.services.order_service import OrderService
 from src.utility.display import money
 
+from src.exceptions.exceptions import get_integer_input , get_positive_integer ,get_text_input
+
 ALLOWED_PAYMENT_METHODS = ["Cash", "Card", "UPI"]
 
 
@@ -31,46 +33,6 @@ def display_menu() -> None:
     print("===================================")
 
 
-def get_integer_input(message: str) -> int:
-    """Get a valid integer from the user."""
-
-    while True:
-        value = input(message).strip()
-
-        try:
-            return int(value)
-        except ValueError:
-            print("Please enter a valid number.")
-
-
-def get_positive_integer(message: str) -> int:
-    """Get a positive integer from the user."""
-
-    while True:
-        value = get_integer_input(message)
-
-        if value <= 0:
-            print("Value must be greater than 0.")
-            continue
-
-        return value
-
-
-def get_text_input(message: str) -> str:
-    """Get non-empty text made of letters and spaces (e.g. 'Fried Rice')."""
-
-    while True:
-        value = " ".join(input(message).split())
-
-        if not value:
-            print("Input cannot be empty.")
-            continue
-
-        if not value.replace(" ", "").isalpha():
-            print("Please use letters and spaces only.")
-            continue
-
-        return value
 
 
 def main() -> None:
@@ -97,18 +59,13 @@ def main() -> None:
 
             elif choice == "2":
                 name = get_text_input("Enter food name: ")
-                food_service.display_search_results(
-                    food_service.search_food(name)
-                )
+                food_service.display_search_results( food_service.search_food(name))
 
             elif choice == "3":
                 food = food_service.find_maximum_price()
 
                 if food:
-                    print(
-                        f"\nMaximum Price Food : "
-                        f"{food.food_name} | {money(food.price)}"
-                    )
+                    print(f"\nMaximum Price Food :  {food.food_name} | {money(food.price)}")
                 else:
                     print("No food items found.")
 
@@ -116,10 +73,7 @@ def main() -> None:
                 food = food_service.find_minimum_price()
 
                 if food:
-                    print(
-                        f"\nMinimum Price Food : "
-                        f"{food.food_name} | {money(food.price)}"
-                    )
+                    print( f"\nMinimum Price Food : {food.food_name} | {money(food.price)}")
                 else:
                     print("No food items found.")
 
@@ -170,6 +124,7 @@ def main() -> None:
 
                 order_id = get_positive_integer("Enter Order ID: ")
 
+                #check if the order id already exist or not 
                 if order_service.find_order_by_id(order_id):
                     print("Order ID already exists.")
                     continue
@@ -177,42 +132,34 @@ def main() -> None:
                 customer_name = get_text_input("Enter Customer Name: ")
                 food_id = get_positive_integer("Enter Food ID: ")
 
+                #check whether the food exist
                 food = food_service.find_food_by_id(food_id)
 
                 if food is None:
                     print("Food ID does not exist.")
                     continue
 
+                #check the quantity as the quanity should not exceed 
                 quantity = get_positive_integer("Enter Quantity: ")
 
                 if quantity > food.stock_quantity:
                     print(f"Only {food.stock_quantity} items available.")
                     continue
 
-                payment_input = get_text_input(
-                    "Enter Payment Method (Cash/Card/UPI): "
-                )
+                #is the payment method correct 
+                payment_input = get_text_input("Enter Payment Method (Cash/Card/UPI): ")
 
-                payment_method = next(
-                    (m for m in ALLOWED_PAYMENT_METHODS
-                     if m.lower() == payment_input.lower()),
-                    None,
-                )
+                payment_method = [ m 
+                                    for m in ALLOWED_PAYMENT_METHODS
+                                    if m.lower() == payment_input.lower()]
 
                 if payment_method is None:
                     print("Invalid payment method.")
                     print("Allowed: Cash, Card, UPI")
                     continue
 
-                new_order = Order(
-                    order_id=order_id,
-                    customer_name=customer_name,
-                    food_id=food_id,
-                    quantity=quantity,
-                    order_date=date.today(),
-                    status="Pending",
-                    payment_method=payment_method,
-                )
+                new_order = Order( order_id=order_id, customer_name=customer_name, food_id=food_id,
+                                    quantity=quantity, order_date=date.today(), status="Pending", payment_method=payment_method,)
 
                 # Reduce stock, then save both files
                 food.stock_quantity -= quantity

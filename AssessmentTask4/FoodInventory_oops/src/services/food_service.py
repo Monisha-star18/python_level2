@@ -72,8 +72,6 @@ class FoodService:
     # Find a food by ID
     def find_food_by_id(self, food_id: int) -> Food | None:
 
-        for food in self.foods:
-            if food.food_id == food_id:
-                return food
+        foods = [food for food in self.foods if food.food_id == food_id]
 
-        return None
+        return foods[0] if foods else None

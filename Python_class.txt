@@ -1,5 +1,6 @@
 
-Day 2 :
+day 1 : 23-09
+Day 2 : 24-9
 
 positional only arguments python - > Before the /  Positional-only
 keyword only arguments python - > After the *Keyword-only
@@ -53,7 +54,8 @@ any() all()
 
 https://github.com/Thangam-Arulseeli/PythonBasics.git
 
-Day 3 :
+
+Day 3 : 25-09
 
 read mode - > r 
 write/overwrite mode -> w
@@ -150,4 +152,64 @@ topics :
 
 food items  try catch context manager path env module 
 sam -> students 
+
+day 4 : staurday 26-09
+
+day 5 :python oops 28-09
+
+day 6 : solid principals  and Advanced Concepts 29-09
+
+Lamda Function : 
+        it is a anonymous 
+        lambda arguments: expression 
+
+    lambda arguments: expression  
+
+    try with : map , filter , sort or sorted 
+
+map , filter and comphrenesion
+
+Iterables - > object which can be iterated
+
+__iter__() , __next__()
+generators -> yield
+
+
+iterators and generators
+
+Decorates 
+    1.Buil in pre defined decorator
+    2.we can create decorator
+
+decorator_func
+
+decorator in deep
+
+getter , setter and deleter
+
+MultiProcessing :
+
+    mutiprocessing and parllel computing is same ???
+
+    mutiprocessing libaray 
+
+threading vs MultiProcessing :
+
+async and awit in Fast API 
+
+import asyncio :
+
+    async def name():
+        await code 
+
+what is GIL in python ??
+
+CPU Bound 
+I/O bound vs CPU bound and Thread and GIL 
+race condition 
+mutitasking , concurrency and parallelism 
+theard seafty 
+thread lock
+
+context manager -> with open() -> with lock -> safe resource handling 
 

@@ -29,7 +29,6 @@ class OrderService:
 
     # Print a list of orders as a table
     def display_order_table(self, orders: list[Order]) -> None:
-
         print_table(
             ["Order ID", "Customer", "Food", "Qty", "Date", "Status", "Payment", "Total"],
             [ [  o.order_id, o.customer_name, self._food_name(o.food_id), o.quantity, o.order_date.isoformat(), o.status, o.payment_method, money(self.calculate_order_total(o)),] for o in orders ],
@@ -37,7 +36,6 @@ class OrderService:
 
     # Print a single order neatly
     def display_order_details(self, order: Order) -> None:
-
         print_details(
             f"ORDER #{order.order_id}",
             [
@@ -53,21 +51,17 @@ class OrderService:
 
     # Find order by order ID
     def find_order_by_id(self, order_id: int) -> Order | None:
-
-        for order in self.orders:
-            if order.order_id == order_id:
-                return order
-
-        return None
+        
+        orders = [order for order in self.orders if order.order_id == order_id]
+        
+        return orders[0] if orders else None
 
     # Find orders by status
     def find_orders_by_status(self, status: str) -> list[Order]:
 
-        return [
-            order
-            for order in self.orders
-            if order.status.lower() == status.lower()
-        ]
+        return [ order
+                for order in self.orders
+                if order.status.lower() == status.lower()  ]
 
     # Calculate total of one order
     def calculate_order_total(self, order: Order) -> float:
