@@ -52,8 +52,6 @@ sorted()
 
 any() all()
 
-https://github.com/Thangam-Arulseeli/PythonBasics.git
-
 
 Day 3 : 25-09
 
