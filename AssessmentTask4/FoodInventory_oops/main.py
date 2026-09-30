@@ -8,7 +8,8 @@ from src.services.food_service import FoodService
 from src.services.order_service import OrderService
 from src.utility.display import money
 
-from src.exceptions.exceptions import get_integer_input , get_positive_integer ,get_text_input
+#from src.exceptions.exceptions import  get_positive_integer , get_text_input
+from src.exceptions.exceptions import InputValidator
 
 ALLOWED_PAYMENT_METHODS = ["Cash", "Card", "UPI"]
 
@@ -58,7 +59,7 @@ def main() -> None:
                 food_service.display_foods()
 
             elif choice == "2":
-                name = get_text_input("Enter food name: ")
+                name = InputValidator.get_text_input("Enter food name: ")
                 food_service.display_search_results( food_service.search_food(name))
 
             elif choice == "3":
@@ -83,7 +84,7 @@ def main() -> None:
                 order_service.display_orders()
 
             elif choice == "6":
-                order_id = get_positive_integer("Enter Order ID: ")
+                order_id = InputValidator.get_positive_integer("Enter Order ID: ")
                 order = order_service.find_order_by_id(order_id)
 
                 if order:
@@ -92,7 +93,7 @@ def main() -> None:
                     print("Order not found.")
 
             elif choice == "7":
-                status = get_text_input("Enter status: ")
+                status = InputValidator.get_text_input("Enter status: ")
                 matches = order_service.find_orders_by_status(status)
 
                 if matches:
@@ -101,7 +102,7 @@ def main() -> None:
                     print("No orders found.")
 
             elif choice == "8":
-                order_id = get_positive_integer("Enter Order ID: ")
+                order_id = InputValidator.get_positive_integer("Enter Order ID: ")
                 order = order_service.find_order_by_id(order_id)
 
                 if order:
@@ -122,15 +123,15 @@ def main() -> None:
             elif choice == "11":
                 print("\n--------- ADD ORDER ---------")
 
-                order_id = get_positive_integer("Enter Order ID: ")
+                order_id = InputValidator.get_positive_integer("Enter Order ID: ")
 
                 #check if the order id already exist or not 
                 if order_service.find_order_by_id(order_id):
                     print("Order ID already exists.")
                     continue
 
-                customer_name = get_text_input("Enter Customer Name: ")
-                food_id = get_positive_integer("Enter Food ID: ")
+                customer_name = InputValidator.get_text_input("Enter Customer Name: ")
+                food_id = InputValidator.get_positive_integer("Enter Food ID: ")
 
                 #check whether the food exist
                 food = food_service.find_food_by_id(food_id)
@@ -140,14 +141,14 @@ def main() -> None:
                     continue
 
                 #check the quantity as the quanity should not exceed 
-                quantity = get_positive_integer("Enter Quantity: ")
+                quantity = InputValidator.get_positive_integer("Enter Quantity: ")
 
                 if quantity > food.stock_quantity:
                     print(f"Only {food.stock_quantity} items available.")
                     continue
 
                 #is the payment method correct 
-                payment_input = get_text_input("Enter Payment Method (Cash/Card/UPI): ")
+                payment_input = InputValidator.get_text_input("Enter Payment Method (Cash/Card/UPI): ")
 
                 payment_method = [ m 
                                     for m in ALLOWED_PAYMENT_METHODS
