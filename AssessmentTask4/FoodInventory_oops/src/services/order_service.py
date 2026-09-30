@@ -50,12 +50,17 @@ class OrderService:
         )
 
     # Find order by order ID
-    def find_order_by_id(self, order_id: int) -> Order | None:
+    # def find_order_by_id(self, order_id: int) -> Order | None:
         
-        orders = [order for order in self.orders if order.order_id == order_id]
+    #     orders = [order for order in self.orders if order.order_id == order_id]
         
-        return orders[0] if orders else None
+    #     return orders[0] if orders else None
 
+    def find_order_by_id(self, order_id: int) -> Order | None:
+        matches = list(filter(lambda o: o.order_id == order_id, self.orders))
+        
+        return matches[0] if matches else None
+    
     # Find orders by status
     def find_orders_by_status(self, status: str) -> list[Order]:
 

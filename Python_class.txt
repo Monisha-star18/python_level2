@@ -217,3 +217,7 @@ day 7 :
     MRO , MRO chain , MRO confilt 
     pytest 
     
+    fixture - > sample data that we collect for the testing 
+    what is a @pytest.fixture
+
+    

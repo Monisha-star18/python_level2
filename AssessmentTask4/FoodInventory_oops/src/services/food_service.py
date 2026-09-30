@@ -70,8 +70,13 @@ class FoodService:
         return min(self.foods, key=lambda food: food.price)
 
     # Find a food by ID
+    # def find_food_by_id(self, food_id: int) -> Food | None:
+
+    #     foods = [food for food in self.foods if food.food_id == food_id]
+
+    #     return foods[0] if foods else None
+
     def find_food_by_id(self, food_id: int) -> Food | None:
-
-        foods = [food for food in self.foods if food.food_id == food_id]
-
-        return foods[0] if foods else None
+        matches = list(filter(lambda f: f.food_id == food_id, self.foods))
+        
+        return matches[0] if matches else None

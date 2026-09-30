@@ -9,7 +9,7 @@ from src.services.order_service import OrderService
 from src.utility.display import money
 
 #from src.exceptions.exceptions import  get_positive_integer , get_text_input
-from src.exceptions.exceptions import InputValidator
+from src.utility.input_exceptions import InputValidator
 
 ALLOWED_PAYMENT_METHODS = ["Cash", "Card", "UPI"]
 
