@@ -215,3 +215,5 @@ context manager -> with open() -> with lock -> safe resource handling
 
 day 7 : 
     MRO , MRO chain , MRO confilt 
+    pytest 
+    
