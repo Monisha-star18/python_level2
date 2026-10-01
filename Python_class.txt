@@ -211,11 +211,32 @@ thread lock
 
 context manager -> with open() -> with lock -> safe resource handling 
 
-day 7 : 
+day 7 : 30-9
     MRO , MRO chain , MRO confilt 
-    pytest 
-    
+    pytest  - > uint testing 
+
     fixture - > sample data that we collect for the testing 
     what is a @pytest.fixture
+
+day 8 : 01-01
+    TESTING INPYTHON 
+    dEBUGGING CONCPETS 
+
+    Debugging , Stack Tracks , Logging 
+
+    Logging Levels :
+        info 
+        warning 
+        debug 
+        error 
+
+Logging.debug
+Logging.info
+Logging.warning
+Logging.error
+Logging.basicCongig 
+
+Logging.critical
+
 
     
