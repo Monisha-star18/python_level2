@@ -239,4 +239,10 @@ Logging.basicCongig
 Logging.critical
 
 
+
+check out : 
+    from collections.abc import Callable 
+    and callable in typehint 
+
+    
     
