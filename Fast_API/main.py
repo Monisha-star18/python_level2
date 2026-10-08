@@ -12,3 +12,4 @@ def hello():
 @app.post('/')
 def creat_student(student_data : Student):
     return student_data
+

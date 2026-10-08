@@ -50,7 +50,7 @@
 # print(add.__annotations__)
 
 
-name: "This is a name" = "Monisha"
-age: 21 = 21
+# name: "This is a name" = "Monisha"
+# age: 21 = 21
 
-print(__annotate__)
+# print(__annotate__)
