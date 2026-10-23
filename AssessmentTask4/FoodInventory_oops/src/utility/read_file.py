@@ -1,7 +1,8 @@
+"""Read any csv file for both the food and orders csv """
 import csv
 from pathlib import Path
 
-
+"""called the """
 def read_file(path: Path) -> list[dict[str, str]]:
 
     if not path.is_file():
@@ -11,3 +12,4 @@ def read_file(path: Path) -> list[dict[str, str]]:
 
         reader = csv.DictReader(file)
         return list(reader)
+
